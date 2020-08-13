@@ -334,6 +334,12 @@ delete person.age;
 
 ## New hotness
 
+- Spread `...`
+- Destructure
+  - nested
+  - rename
+- Generator function?
+
 ---
 
 ## References
