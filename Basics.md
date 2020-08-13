@@ -186,7 +186,7 @@ if (number == 5) {
 
 - `forEach`, `map`, `filter`, `find`, `reduce`
 - Functions that exist on collections are great
-- Assume `const people = ["Kevin", "Luke", "Tim"];
+- Assume `const people = ["Kevin", "Luke", "Tim"];`
 
 ---
 
@@ -207,11 +207,57 @@ const newPeople = list.map(person => {
     const newPerson = "Hello " + person;
     return newPerson
 });
+// newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 ``` javascript
-const new people = people.map(person => "Hello " + person);
+const newPeople = people.map(person => "Hello " + person);
+// newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
+---
+
+## Collections
+### `filter`
+
+``` javascript
+const peopleWithK = people.filter(person => person.toUpperCase().includes('K'));
+// peopleWithK = ["Kevin", "Luke"];
+```
+
+---
+
+## Collections
+### `find`
+
+``` javascript
+const tim = people.find(person => person === "Tim");
+// tim = "Tim";
+const nick = people.find(person => person === "Nick");
+// nick = undefined
+```
+
+---
+
+## Collections
+### `reduce`
+
+``` javascript
+const mashed = people.reduce(
+    (accumulator, person) => `${accumulator} ${person}`,
+    ""
+);
+// mashed = "Kevin Luke Tim";
+```
+
+---
+
+## Collections
+### Many more
+
+- `split`
+- `includes`
+- `join`
+- `...`
 ---
 
 ## Functional concepts
