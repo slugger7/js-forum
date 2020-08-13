@@ -44,7 +44,7 @@ _class: invert
 
 - `<script src="./path/to/js/file/index.js"></script>`
 - Can't be self closing
-- Recommended to add to end of body
+- Recommended to add to end of body to make sure the DOM is fully loaded
 - Components have been rendered
 
 ---
@@ -200,22 +200,24 @@ if (number == 5) {
 ---
 
 ## Loops
+
 ### `while`
 
-``` javascript
+```javascript
 let count = 0;
 while (true) {
-    count++;
-    console.log("This is how much we have looped: ", count);
+  count++;
+  console.log('This is how much we have looped: ', count);
 }
 ```
 
 ---
 
 ## Loops
+
 ### `for`
 
-``` javascript
+```javascript
 for (let count = 0; count <= 5; count++;) {
     console.log("Current count: ", count);
 }
@@ -224,12 +226,13 @@ for (let count = 0; count <= 5; count++;) {
 ---
 
 ## Loops
+
 ### `do ... while`
 
-``` javascript
+```javascript
 do {
-    console.log("We only show this once");
-} while (false)
+  console.log('We only show this once');
+} while (false);
 ```
 
 ---
@@ -239,8 +242,9 @@ do {
 - `forEach`, `map`, `filter`, `find`, `reduce`
 - Functions that exist on collections are great
 - Assume:
-``` javascript
-const people = ["Kevin", "Luke", "Tim"];
+
+```javascript
+const people = ['Kevin', 'Luke', 'Tim'];
 ```
 
 ---
@@ -266,55 +270,58 @@ const newPeople = list.map((person) => {
 });
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
-``` javascript
-const newPeople = people.map(person => "Hello " + person);
+
+```javascript
+const newPeople = people.map((person) => 'Hello ' + person);
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
 ---
 
 ## Collections
+
 ### `filter`
 
-``` javascript
-const peopleWithK = people.filter(person => person.toUpperCase().includes('K'));
+```javascript
+const peopleWithK = people.filter((person) => person.toUpperCase().includes('K'));
 // peopleWithK = ["Kevin", "Luke"];
 ```
 
 ---
 
 ## Collections
+
 ### `find`
 
-``` javascript
-const tim = people.find(person => person === "Tim");
+```javascript
+const tim = people.find((person) => person === 'Tim');
 // tim = "Tim";
-const nick = people.find(person => person === "Nick");
+const nick = people.find((person) => person === 'Nick');
 // nick = undefined
 ```
 
 ---
 
 ## Collections
+
 ### `reduce`
 
-``` javascript
-const mashed = people.reduce(
-    (accumulator, person) => `${accumulator} ${person}`,
-    ""
-);
+```javascript
+const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`, '');
 // mashed = "Kevin Luke Tim";
 ```
 
 ---
 
 ## Collections
+
 ### Many more
 
 - `split`
 - `includes`
 - `join`
 - `...` < not a spread operator
+
 ---
 
 ## Functional concepts
