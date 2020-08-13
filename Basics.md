@@ -83,35 +83,70 @@ function sayHello() {
 
 ---
 
+## Functions
+
+- Function
+```
+function functionName(arg1, arg2) { console.log("hello world")}
+```
+- Arrow
+
+---
+
 ## Variables
-### var
+### `var`
 
 - Avoid
-- Globally scoped
 - Headaches galore
-```
-() => {
-    var name = "kevin";
-}
-console.log(name);
-```
+- Scopes to nearest function
+- Mutable
 
 ---
 
 ## Variables
-### const
+### `const`
 
 - Preferred
-
+- Scopes to block
+- Use it instead of var
+- Immutable
 ---
 
 ## Variables
-### let
+### `let`
+
+- Use less often than `const`
+- Scopes to block
+- Mutable
+
+---
+
+## Collections
+
+---
+
+## Functional concepts
+
+
+---
+
+## Prototypes
+
+---
+
+## Dynamic Objects
+
+---
+
+## New hotness
 
 ---
 
 ## References
 
 - https://en.wikipedia.org/wiki/JavaScript
+- https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/
+- https://www.w3schools.com
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
 ---
