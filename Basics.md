@@ -93,18 +93,25 @@ function sayHello() {
 ## Functions
 
 - Function
-``` javascript
-function fnName(arg1, arg2) { console.log("hello world", arg1); }
+
+```javascript
+function fnName(arg1, arg2) {
+  console.log('hello world', arg1);
+}
 ```
 
 - Arrow
-``` javascript
-const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
+
+```javascript
+const fnName = (arg1, arg2) => {
+  console.log('hello world', arg1);
+};
 ```
 
 ---
 
 ## Functions
+
 ### Function
 
 - Pros
@@ -116,6 +123,7 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 ---
 
 ## Functions
+
 ### Arrow
 
 - Pros
@@ -161,14 +169,15 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 ---
 
 ## Logic
+
 ### `if`
 
-``` javascript
-const number = "5";
+```javascript
+const number = '5';
 if (number == 5) {
-    console.log("Number is 5");
-} else { 
-    console.log("Number is not 5");
+  console.log('Number is 5');
+} else {
+  console.log('Number is not 5');
 }
 ```
 
@@ -191,34 +200,35 @@ if (number == 5) {
 ---
 
 ## Collections
+
 ### `forEach`
 
-``` javascript
-people.forEach(person => console.log(`Hello ${person}`));
+```javascript
+people.forEach((person) => console.log(`Hello ${person}`));
 ```
 
 ---
 
 ## Collections
+
 ### `map`
 
-``` javascript
-const newPeople = list.map(person => {
-    const newPerson = "Hello " + person;
-    return newPerson
+```javascript
+const newPeople = list.map((person) => {
+  const newPerson = 'Hello ' + person;
+  return newPerson;
 });
 ```
-``` javascript
+
+```javascript
 const new people = people.map(person => "Hello " + person);
 ```
 
-Most of the time you are dealing with collections/arrays
-
-There are a number of very useful functions to know to make life easier
-
 ---
 
-## `find` - Get one item from the collection
+## Collections
+
+### `find`
 
 - FirstOfDefault in C# terms
 - Gets the first item matching the predicatr function passed
