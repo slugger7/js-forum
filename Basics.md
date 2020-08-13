@@ -309,6 +309,24 @@ function addName(obj, name) {
 
 ---
 
+## Currying
+
+- A function that returns another function
+
+```
+function getProperty(propertyName) {
+    return function getPropertyFromObject(obj){
+        return obj[propertyName];
+    }
+}
+
+const getName = getProperty('name');
+const name = getName({ name: 'Tony' });
+// name === 'Tony'
+```
+
+---
+
 ## Prototypes
 
 The weird and wacky way that JavaScript implements something resembling inheritance
