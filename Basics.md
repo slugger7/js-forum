@@ -182,11 +182,57 @@ if (number == 5) {
 
 ---
 
+## Loops
+
+- `while`
+- `for`
+- `do ... while`
+
+---
+
+## Loops
+### `while`
+
+``` javascript
+let count = 0;
+while (true) {
+    count++;
+    console.log("This is how much we have looped: ", count);
+}
+```
+
+---
+
+## Loops
+### `for`
+
+``` javascript
+for (let count = 0; count <= 5; count++;) {
+    console.log("Current count: ", count);
+}
+```
+
+---
+
+## Loops
+### `do ... while`
+
+``` javascript
+do {
+    console.log("We only show this once");
+} while (false)
+```
+
+---
+
 ## Collections
 
 - `forEach`, `map`, `filter`, `find`, `reduce`
 - Functions that exist on collections are great
-- Assume `const people = ["Kevin", "Luke", "Tim"];`
+- Assume:
+``` javascript
+const people = ["Kevin", "Luke", "Tim"];
+```
 
 ---
 
@@ -257,7 +303,7 @@ const mashed = people.reduce(
 - `split`
 - `includes`
 - `join`
-- `...`
+- `...` < not a spread operator
 ---
 
 ## Functional concepts
