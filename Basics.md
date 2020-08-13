@@ -191,11 +191,57 @@ if (number == 5) {
 
 ---
 
+## Loops
+
+- `while`
+- `for`
+- `do ... while`
+
+---
+
+## Loops
+### `while`
+
+``` javascript
+let count = 0;
+while (true) {
+    count++;
+    console.log("This is how much we have looped: ", count);
+}
+```
+
+---
+
+## Loops
+### `for`
+
+``` javascript
+for (let count = 0; count <= 5; count++;) {
+    console.log("Current count: ", count);
+}
+```
+
+---
+
+## Loops
+### `do ... while`
+
+``` javascript
+do {
+    console.log("We only show this once");
+} while (false)
+```
+
+---
+
 ## Collections
 
 - `forEach`, `map`, `filter`, `find`, `reduce`
 - Functions that exist on collections are great
-- Assume `const people = ["Kevin", "Luke", "Tim"];
+- Assume:
+``` javascript
+const people = ["Kevin", "Luke", "Tim"];
+```
 
 ---
 
@@ -218,15 +264,60 @@ const newPeople = list.map((person) => {
   const newPerson = 'Hello ' + person;
   return newPerson;
 });
+// newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
-
-```javascript
-const new people = people.map(person => "Hello " + person);
+``` javascript
+const newPeople = people.map(person => "Hello " + person);
+// newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
 ---
 
 ## Collections
+### `filter`
+
+``` javascript
+const peopleWithK = people.filter(person => person.toUpperCase().includes('K'));
+// peopleWithK = ["Kevin", "Luke"];
+```
+
+---
+
+## Collections
+### `find`
+
+``` javascript
+const tim = people.find(person => person === "Tim");
+// tim = "Tim";
+const nick = people.find(person => person === "Nick");
+// nick = undefined
+```
+
+---
+
+## Collections
+### `reduce`
+
+``` javascript
+const mashed = people.reduce(
+    (accumulator, person) => `${accumulator} ${person}`,
+    ""
+);
+// mashed = "Kevin Luke Tim";
+```
+
+---
+
+## Collections
+### Many more
+
+- `split`
+- `includes`
+- `join`
+- `...` < not a spread operator
+---
+
+## Functional concepts
 
 ### `find`
 
@@ -425,7 +516,11 @@ saffa.setSurname('Warren');
 
 ## New hotness
 
--
+- Spread `...`
+- Destructure
+  - nested
+  - rename
+- Generator function?
 
 ---
 
