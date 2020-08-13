@@ -426,15 +426,11 @@ person.surname = "Griffon"; // This does nothing!
 
 ## New hotness
 
-<<<<<<< HEAD
 - Spread `...`
 - Destructure
   - nested
   - rename
 - Generator function?
-=======
--
->>>>>>> 4810ad5c3162298812d3d7dc70a7b59491a058db
 
 ---
 
