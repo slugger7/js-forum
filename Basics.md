@@ -160,7 +160,57 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 
 ---
 
+## Logic
+### `if`
+
+``` javascript
+const number = "5";
+if (number == 5) {
+    console.log("Number is 5");
+} else { 
+    console.log("Number is not 5");
+}
+```
+
+---
+
+## Logic
+
+- `===` `!==` - always
+- `==` `!=` - never
+- Coercion of types
+
+---
+
 ## Collections
+
+- `forEach`, `map`, `filter`, `find`, `reduce`
+- Functions that exist on collections are great
+- Assume `const people = ["Kevin", "Luke", "Tim"];
+
+---
+
+## Collections
+### `forEach`
+
+``` javascript
+people.forEach(person => console.log(`Hello ${person}`));
+```
+
+---
+
+## Collections
+### `map`
+
+``` javascript
+const newPeople = list.map(person => {
+    const newPerson = "Hello " + person;
+    return newPerson
+});
+```
+``` javascript
+const new people = people.map(person => "Hello " + person);
+```
 
 ---
 
