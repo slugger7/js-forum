@@ -131,6 +131,7 @@ const fnName = (arg1, arg2) => {
   - small
   - `const greet = arg1 => console.log("hello", arg1); greet("Kevin");`
   - no need to wrap 1 argument with braces
+  - Captures `this` keyword
 - Cons
   - Does not create scope
 
@@ -140,9 +141,9 @@ const fnName = (arg1, arg2) => {
 
 ### `var`
 
-- Avoid
-- Headaches galore
+- Avoid (headaches galore and not hipster)
 - Scopes to nearest function
+- If no function to scope to, be scoped to window function ie global (!!!)
 - Mutable
 
 ---
@@ -153,8 +154,9 @@ const fnName = (arg1, arg2) => {
 
 - Preferred
 - Scopes to block
-- Use it instead of var
+- Use it instead of `var`
 - Immutable
+- Should be the default
 
 ---
 
@@ -174,7 +176,7 @@ const fnName = (arg1, arg2) => {
 
 ```javascript
 const number = '5';
-if (number == 5) {
+if (number === 5) {
   console.log('Number is 5');
 } else {
   console.log('Number is not 5');
@@ -186,15 +188,15 @@ if (number == 5) {
 ## Logic
 
 - `===` `!==` - always
-- `==` `!=` - never
-- Coercion of types
+- `==` `!=` - avoid (unless you know what you are doing)
+- Double equals uses type coercion to try and convert the type on the right to match the type on the left
 
 ---
 
 ## Loops
 
 - `while`
-- `for`
+- `for`, `for of`, `for in`
 - `do ... while`
 
 ---
@@ -239,7 +241,7 @@ do {
 
 ## Collections
 
-- `forEach`, `map`, `filter`, `find`, `reduce`
+- `forEach`, `map`, `filter`, `find`, `reduce`, `some`
 - Functions that exist on collections are great
 - Assume:
 
@@ -291,6 +293,19 @@ const peopleWithK = people.filter((person) => person.toUpperCase().includes('K')
 
 ## Collections
 
+### `some`
+
+Lazily evaluates if any item in the collection matches the predicate
+
+```javascript
+const doesContainSomeoneWithK = people.some((person) => person.toUpperCase().includes('K'));
+// peopleWithK = true
+```
+
+---
+
+## Collections
+
 ### `find`
 
 ```javascript
@@ -305,6 +320,8 @@ const nick = people.find((person) => person === 'Nick');
 ## Collections
 
 ### `reduce`
+
+Usually used to aggregate items in a collection.
 
 ```javascript
 const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`, '');
@@ -321,20 +338,6 @@ const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`
 - `includes`
 - `join`
 - `...` < not a spread operator
-
----
-
-## Functional concepts
-
-### `find`
-
-- FirstOfDefault in C# terms
-- Gets the first item matching the predicatr function passed
-- Will stop at the first item it finds
-
-```js
-const luke = people.find((person) => person.name === 'Luke');
-```
 
 ---
 
