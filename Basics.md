@@ -315,7 +315,9 @@ The weird and wacky way that JavaScript implements something resembling inherita
 
 ---
 
-## Object Constructors
+## Prototypes
+
+### Object Constructors
 
 - A way of creating a class-like function
 - Defines a way of creating the object
@@ -328,8 +330,78 @@ function Person(name){
 
 const person = new Person('Peter');
 
-person.surname = "Griffon"; // This does nothing!
+person.surname = "Griffon"; // This does nothing, you must go via the prototype!
 ```
+
+---
+
+## Prototypes
+
+### What the hell are they?
+
+- Essentially, a linked list of objects pointing to the next object in the chain
+- Adding to the prototype is the only way to add a property or function to a function constructor
+
+---
+
+## Prototypes
+
+### Example
+
+```js
+function American(name) {
+  this.annoying = true;
+  this.name = name;
+}
+
+American.__proto__.setSurname = function (surname) {
+  this.surname = surname;
+};
+
+const donald = new American('Donald');
+donald.setSurname('Trump');
+
+// Result:
+// {
+//     name: "Donald",
+//     surname: "Trump",
+//     annoying: true,
+//     __proto__: {
+//        setSurname: function() { ... }
+//     }
+// }
+```
+
+---
+
+## Prototypes
+
+### Inheritance
+
+You can inherit the features and prototype chain from another funtion constructor
+
+```js
+function SouthAfrican(name, loadsheddingLevel) {
+  American.call(this, name);
+  this.loadsheddingLevel = loadsheddingLevel;
+}
+
+const saffa = new SouthAfrican('Luke', 3);
+saffa.setSurname('Warren');
+
+// saffa.annoying would be true!
+```
+
+---
+
+## Prototypes
+
+### How does this work?
+
+- Own properties vs Prototype properties
+- We keep looking up the chain until we find a property that matches
+
+`SouthAfican (owned) --> South African (prototype) --> American --> Object --> null`
 
 ---
 
@@ -345,5 +417,6 @@ person.surname = "Griffon"; // This does nothing!
 - https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/
 - https://www.w3schools.com
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 
 ---
