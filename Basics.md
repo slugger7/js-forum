@@ -1,7 +1,7 @@
 ---
 marp: true
 _class: invert
---- 
+---
 
 # Javascript 1
 
@@ -48,12 +48,15 @@ _class: invert
 - Components have been rendered
 
 ---
+
 ## Where to use it
 
 - index.js
-``` Javascript
+
+```Javascript
 alert("hello world");
 ```
+
 - Main?
 - Just runs
 
@@ -64,6 +67,7 @@ alert("hello world");
 ```
 <button onclick="alert('hello world');">Say hello damnit</button>
 ```
+
 - Same sin as as inline styling
 
 ---
@@ -71,12 +75,15 @@ alert("hello world");
 ## Redemption
 
 - index.js
+
 ```
 function sayHello() {
     alert("hello world");
 }
 ```
+
 - index.html
+
 ```
 <button onclick="sayHello()">Say hello</button>
 ```
@@ -89,6 +96,7 @@ function sayHello() {
 ``` javascript
 function fnName(arg1, arg2) { console.log("hello world", arg1); }
 ```
+
 - Arrow
 ``` javascript
 const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
@@ -121,6 +129,7 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 ---
 
 ## Variables
+
 ### `var`
 
 - Avoid
@@ -131,15 +140,18 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 ---
 
 ## Variables
+
 ### `const`
 
 - Preferred
 - Scopes to block
 - Use it instead of var
 - Immutable
+
 ---
 
 ## Variables
+
 ### `let`
 
 - Use less often than `const`
@@ -154,7 +166,6 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 
 ## Functional concepts
 
-
 ---
 
 ## Prototypes
@@ -162,6 +173,20 @@ const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
 ---
 
 ## Dynamic Objects
+
+- Anything goes in JS
+- You can add or remove items from an object at anytime
+
+```javascript
+const person = {
+  age: 10,
+};
+person['first'] = 'Donald';
+person.surname = 'Trump';
+delete person.age;
+
+// Result: { first: 'Donald', surname: 'Trump' }
+```
 
 ---
 
