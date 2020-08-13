@@ -86,10 +86,37 @@ function sayHello() {
 ## Functions
 
 - Function
-```
-function functionName(arg1, arg2) { console.log("hello world")}
+``` javascript
+function fnName(arg1, arg2) { console.log("hello world", arg1); }
 ```
 - Arrow
+``` javascript
+const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
+```
+
+---
+
+## Functions
+### Function
+
+- Pros
+  - More similar to conventional languages
+  - Creates scope
+- Cons
+  - More to type (We are all lazy)
+
+---
+
+## Functions
+### Arrow
+
+- Pros
+  - `() => console.log("hello world");`
+  - small
+  - `const greet = arg1 => console.log("hello", arg1); greet("Kevin");`
+  - no need to wrap 1 argument with braces
+- Cons
+  - Does not create scope
 
 ---
 
