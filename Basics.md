@@ -93,12 +93,38 @@ function sayHello() {
 ## Functions
 
 - Function
-
-```
-function functionName(arg1, arg2) { console.log("hello world")}
+``` javascript
+function fnName(arg1, arg2) { console.log("hello world", arg1); }
 ```
 
 - Arrow
+``` javascript
+const fnName = (arg1, arg2) => { console.log("hello world", arg1); }
+```
+
+---
+
+## Functions
+### Function
+
+- Pros
+  - More similar to conventional languages
+  - Creates scope
+- Cons
+  - More to type (We are all lazy)
+
+---
+
+## Functions
+### Arrow
+
+- Pros
+  - `() => console.log("hello world");`
+  - small
+  - `const greet = arg1 => console.log("hello", arg1); greet("Kevin");`
+  - no need to wrap 1 argument with braces
+- Cons
+  - Does not create scope
 
 ---
 
@@ -134,7 +160,57 @@ function functionName(arg1, arg2) { console.log("hello world")}
 
 ---
 
+## Logic
+### `if`
+
+``` javascript
+const number = "5";
+if (number == 5) {
+    console.log("Number is 5");
+} else { 
+    console.log("Number is not 5");
+}
+```
+
+---
+
+## Logic
+
+- `===` `!==` - always
+- `==` `!=` - never
+- Coercion of types
+
+---
+
 ## Collections
+
+- `forEach`, `map`, `filter`, `find`, `reduce`
+- Functions that exist on collections are great
+- Assume `const people = ["Kevin", "Luke", "Tim"];
+
+---
+
+## Collections
+### `forEach`
+
+``` javascript
+people.forEach(person => console.log(`Hello ${person}`));
+```
+
+---
+
+## Collections
+### `map`
+
+``` javascript
+const newPeople = list.map(person => {
+    const newPerson = "Hello " + person;
+    return newPerson
+});
+```
+``` javascript
+const new people = people.map(person => "Hello " + person);
+```
 
 Most of the time you are dealing with collections/arrays
 
