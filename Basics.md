@@ -136,13 +136,21 @@ function functionName(arg1, arg2) { console.log("hello world")}
 
 ## Collections
 
+Most of the time you are dealing with collections/arrays
+
+There are a number of very useful functions to know to make life easier
+
 ---
 
-## Functional concepts
+## `find` - Get one item from the collection
 
----
+- FirstOfDefault in C# terms
+- Gets the first item matching the predicatr function passed
+- Will stop at the first item it finds
 
-## Prototypes
+```js
+const luke = people.find((person) => person.name === 'Luke');
+```
 
 ---
 
@@ -164,7 +172,84 @@ delete person.age;
 
 ---
 
+## Functional concepts
+
+Due to the anything goes nature of JavaScript, it can useful to apply functional programming concepts.
+
+Understanding these concepts will help you use well known utility libraries such as `lodash` or `ramda`.
+
+---
+
+## Purity
+
+### What?
+
+- Speaks to the nature of a `function` in JS
+- Given the same input, produces the same output
+- Does not mutate any external state (including params)
+
+### Why?
+
+- Easier to test
+- Easier to debug without side effects as the code can be repeatably run
+
+---
+
+## Purity Example
+
+### Impure
+
+- Mutates the params coming in!
+
+```javascript
+function addName(obj, name) {
+  obj.name = name;
+  return obj;
+}
+```
+
+### Pure
+
+- Return a new object
+
+```javascript
+function addName(obj, name) {
+  return {
+    ...obj,
+    name,
+  };
+}
+```
+
+---
+
+## Prototypes
+
+The weird and wacky way that JavaScript implements something resembling inheritance
+
+---
+
+## Object Constructors
+
+- A way of creating a class-like function
+- Defines a way of creating the object
+- Provides some pridictability while sacrificing dynamic objects
+
+```
+function Person(name){
+    this.name = name;
+}
+
+const person = new Person('Peter');
+
+person.surname = "Griffon"; // This does nothing!
+```
+
+---
+
 ## New hotness
+
+-
 
 ---
 
