@@ -395,6 +395,9 @@ function addName(obj, name) {
 }
 ```
 
+---
+## Purity Example
+
 ### Pure
 
 - Return a new object
@@ -414,7 +417,7 @@ function addName(obj, name) {
 
 - A function that returns another function
 
-```
+``` javascript
 function getProperty(propertyName) {
     return function getPropertyFromObject(obj){
         return obj[propertyName];
