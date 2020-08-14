@@ -508,12 +508,16 @@ function SouthAfrican(name, loadsheddingLevel) {
   American.call(this, name);
   this.loadsheddingLevel = loadsheddingLevel;
 }
-SouthAfrican.prototype = new American();
+// We need this to link the prototype chain
+SouthAfrican.prototype = Object.create(American);
 
 const saffa = new SouthAfrican('Luke', 3);
+
+// This method is defined on the American object!
 saffa.setSurname('Warren');
 
-// saffa.annoying would be true!
+// `saffa.annoying` would be true!
+// `saffa.loadsheddingLevel` would be 3!
 ```
 
 ---
