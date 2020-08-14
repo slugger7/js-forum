@@ -396,6 +396,7 @@ function addName(obj, name) {
 ```
 
 ---
+
 ## Purity Example
 
 ### Pure
@@ -417,11 +418,11 @@ function addName(obj, name) {
 
 - A function that returns another function
 
-``` javascript
+```javascript
 function getProperty(propertyName) {
-    return function getPropertyFromObject(obj){
-        return obj[propertyName];
-    }
+  return function getPropertyFromObject(obj) {
+    return obj[propertyName];
+  };
 }
 
 const getName = getProperty('name');
@@ -476,7 +477,7 @@ function American(name) {
   this.name = name;
 }
 
-American.__proto__.setSurname = function (surname) {
+American.prototype.setSurname = function (surname) {
   this.surname = surname;
 };
 
@@ -507,6 +508,7 @@ function SouthAfrican(name, loadsheddingLevel) {
   American.call(this, name);
   this.loadsheddingLevel = loadsheddingLevel;
 }
+SouthAfrican.prototype = new American();
 
 const saffa = new SouthAfrican('Luke', 3);
 saffa.setSurname('Warren');
