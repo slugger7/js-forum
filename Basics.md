@@ -826,6 +826,20 @@ async function justDo() {
 
 justDo();
 ```
+- anything returned needs to be awaited
+- demo
+
+---
+
+## Async - async/await
+
+- any & all could use `Promise.all`
+``` js
+const asyncFns = [asyncFn1, asyncFn2, asyncFn3];
+const awaiters = asyncFns.map(fn => fn());
+const [res1, res2, res3] = awaiters.map(async awaiter => await awaiter);
+```
+- ideas on any?
 ---
 
 ## References
