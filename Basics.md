@@ -543,6 +543,172 @@ saffa.setSurname('Warren');
 
 ---
 
+## Modules & imports
+
+### External code
+
+- Node
+- CDN "imports"
+- Security risks
+
+---
+
+## Modules & imports
+
+### Node
+
+- LTS every 2 years
+- NPM (yay)
+- Backend/frontend
+
+---
+
+## Modules & imports
+
+### Node - creating a project
+
+- `npm init` - create a project
+- `package.json` - project scripts, info, dependencies...
+- `package-lock.json` - locking versions of sub dependencies
+- `node_modules` - where dependencies are saved
+
+---
+
+## Modules & imports
+
+### Node - NPM
+
+- Node Package Manager / whatever acronym is on their site
+- `npm i ramda`
+- `npm i --save-dev jest`
+- `npm un jest`
+
+---
+
+## Modules & imports
+
+### Node - import/require
+
+- `const { map } = require("ramda");`
+- `const R = require("ramda");`
+- `import { map } from "ramda";`
+- `import R from "ramda";`
+- `import React, { useState, useEffect } from "react";`
+- `import * as Foo from "no-default-export";`
+- Demo
+
+---
+
+## Modules & imports
+
+### Node - creating modules - require
+
+- greeter.js
+``` js
+const greet = name => console.log(`Hello ${name}`);
+module.exports = { greet };
+```
+- index.js
+``` js
+const { greet } = require("./greeter");
+greet("Kevin");
+```
+- Demo
+
+---
+
+## Modules & imports
+
+### Node - creating modules - import
+
+- greeter.js
+``` js
+export const greet = name => console.log(`Hello ${name}`);
+export default greet;
+```
+- index.js
+``` js
+import { greet } from "./greeter";
+greet("Kevin");
+```
+- Demo
+
+---
+
+## Async
+
+- Callbacks
+- Promises
+- Async/await
+
+---
+
+## Async - Callbacks
+
+- Error first callbacks
+- Promisify
+- Currying
+- First class functions
+
+---
+
+## Async - setTimeout
+
+``` js
+const doSomething = () => console.log("Something has been done");
+setTimeout(doSomething, 3000);
+```
+- `doSomething` is our callback fn
+
+---
+
+## Async - error first callbacks
+
+``` js
+const callback = (err, value) => {
+  if (err) {
+    handleErr(err);
+  }
+
+  handleValue(value);
+}
+
+somethingAsync(data, data1, callback);
+```
+
+---
+
+## Async - currying
+
+``` js
+const callbackForCustomer = customerId => (err, customerData) => {
+  if (err) {
+    console.error("We failed getting customer or something", err);
+  }
+
+  doSomethingWithCustomer(customer, customerId);
+}
+
+const callback = callBackForCustomer(1);
+getCustomerData(1, callback);
+```
+
+---
+
+## Async - promisify
+
+---
+
+## Async - Promises
+
+- Flows nicely
+- Can be returned
+- Monad
+- Error handling
+- Any & all
+
+---
+
 ## References
 
 - https://en.wikipedia.org/wiki/JavaScript
@@ -550,5 +716,6 @@ saffa.setSurname('Warren');
 - https://www.w3schools.com
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+- https://nodejs.org/api/fs.html#fs_dir_read_callback
 
 ---
