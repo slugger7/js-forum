@@ -96,7 +96,7 @@ function sayHello() {
 
 ```javascript
 function fnName(arg1, arg2) {
-  console.log("hello world", arg1);
+  console.log('hello world', arg1);
 }
 ```
 
@@ -104,7 +104,7 @@ function fnName(arg1, arg2) {
 
 ```javascript
 const fnName = (arg1, arg2) => {
-  console.log("hello world", arg1);
+  console.log('hello world', arg1);
 };
 ```
 
@@ -175,11 +175,11 @@ const fnName = (arg1, arg2) => {
 ### `if`
 
 ```javascript
-const number = "5";
+const number = '5';
 if (number === 5) {
-  console.log("Number is 5");
+  console.log('Number is 5');
 } else {
-  console.log("Number is not 5");
+  console.log('Number is not 5');
 }
 ```
 
@@ -209,7 +209,7 @@ if (number === 5) {
 let count = 0;
 while (true) {
   count++;
-  console.log("This is how much we have looped: ", count);
+  console.log('This is how much we have looped: ', count);
 }
 ```
 
@@ -233,7 +233,7 @@ for (let count = 0; count <= 5; count++;) {
 
 ```javascript
 do {
-  console.log("We only show this once");
+  console.log('We only show this once');
 } while (false);
 ```
 
@@ -246,7 +246,7 @@ do {
 - Assume:
 
 ```javascript
-const people = ["Kevin", "Luke", "Tim"];
+const people = ['Kevin', 'Luke', 'Tim'];
 ```
 
 ---
@@ -267,14 +267,14 @@ people.forEach((person) => console.log(`Hello ${person}`));
 
 ```javascript
 const newPeople = list.map((person) => {
-  const newPerson = "Hello " + person;
+  const newPerson = 'Hello ' + person;
   return newPerson;
 });
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
 ```javascript
-const newPeople = people.map((person) => "Hello " + person);
+const newPeople = people.map((person) => 'Hello ' + person);
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
@@ -285,9 +285,7 @@ const newPeople = people.map((person) => "Hello " + person);
 ### `filter`
 
 ```javascript
-const peopleWithK = people.filter((person) =>
-  person.toUpperCase().includes("K")
-);
+const peopleWithK = people.filter((person) => person.toUpperCase().includes('K'));
 // peopleWithK = ["Kevin", "Luke"];
 ```
 
@@ -300,9 +298,7 @@ const peopleWithK = people.filter((person) =>
 Lazily evaluates if any item in the collection matches the predicate
 
 ```javascript
-const doesContainSomeoneWithK = people.some((person) =>
-  person.toUpperCase().includes("K")
-);
+const doesContainSomeoneWithK = people.some((person) => person.toUpperCase().includes('K'));
 // peopleWithK = true
 ```
 
@@ -313,9 +309,9 @@ const doesContainSomeoneWithK = people.some((person) =>
 ### `find`
 
 ```javascript
-const tim = people.find((person) => person === "Tim");
+const tim = people.find((person) => person === 'Tim');
 // tim = "Tim";
-const nick = people.find((person) => person === "Nick");
+const nick = people.find((person) => person === 'Nick');
 // nick = undefined
 ```
 
@@ -328,10 +324,7 @@ const nick = people.find((person) => person === "Nick");
 Usually used to aggregate items in a collection.
 
 ```javascript
-const mashed = people.reduce(
-  (accumulator, person) => `${accumulator} ${person}`,
-  ""
-);
+const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`, '');
 // mashed = "Kevin Luke Tim";
 ```
 
@@ -357,8 +350,8 @@ const mashed = people.reduce(
 const person = {
   age: 10,
 };
-person["first"] = "Donald";
-person.surname = "Trump";
+person['first'] = 'Donald';
+person.surname = 'Trump';
 delete person.age;
 
 // Result: { first: 'Donald', surname: 'Trump' }
@@ -432,8 +425,8 @@ function getProperty(propertyName) {
   };
 }
 
-const getName = getProperty("name");
-const name = getName({ name: "Tony" });
+const getName = getProperty('name');
+const name = getName({ name: 'Tony' });
 // name === 'Tony'
 ```
 
@@ -488,8 +481,8 @@ American.prototype.setSurname = function (surname) {
   this.surname = surname;
 };
 
-const donald = new American("Donald");
-donald.setSurname("Trump");
+const donald = new American('Donald');
+donald.setSurname('Trump');
 
 // Result:
 // {
@@ -518,10 +511,10 @@ function SouthAfrican(name, loadsheddingLevel) {
 // We need this to link the prototype chain
 SouthAfrican.prototype = Object.create(American);
 
-const saffa = new SouthAfrican("Luke", 3);
+const saffa = new SouthAfrican('Luke', 3);
 
 // This method is defined on the American object!
-saffa.setSurname("Warren");
+saffa.setSurname('Warren');
 
 // `saffa.annoying` would be true!
 // `saffa.loadsheddingLevel` would be 3!
@@ -620,8 +613,8 @@ module.exports = { greet };
 - index.js
 
 ```js
-const { greet } = require("./greeter");
-greet("Kevin");
+const { greet } = require('./greeter');
+greet('Kevin');
 ```
 
 - Demo
@@ -642,8 +635,8 @@ export default greet;
 - index.js
 
 ```js
-import { greet } from "./greeter";
-greet("Kevin");
+import { greet } from './greeter';
+greet('Kevin');
 ```
 
 - Demo
@@ -670,7 +663,7 @@ greet("Kevin");
 ## Async - setTimeout
 
 ```js
-const doSomething = () => console.log("Something has been done");
+const doSomething = () => console.log('Something has been done');
 setTimeout(doSomething, 3000);
 ```
 
@@ -684,6 +677,7 @@ setTimeout(doSomething, 3000);
 const callback = (err, value) => {
   if (err) {
     handleErr(err);
+    return;
   }
 
   handleValue(value);
@@ -699,7 +693,7 @@ somethingAsync(data, data1, callback);
 ```js
 const callbackForCustomer = (customerId) => (err, customerData) => {
   if (err) {
-    console.error("We failed getting customer or something", err);
+    console.error('We failed getting customer or something', err);
   }
 
   doSomethingWithCustomer(customer, customerId);
@@ -736,47 +730,52 @@ getCustomerData(1, callback);
 ## Async - creating promises
 
 ```js
-const lukeOrKevin = (name) => new Promise((resolve, reject) => {
-  if (name === "Luke") {
-    resolve("LuKe WaS fOuNd");
-  }
-  if (name === "Kevin") {
-    resolve("It's me");
-  }
-  reject(`Could not find Luke or kevin instead found ${name}`);
-});
-const messageHandler = message => console.log(message);
-lukeOrKevin("Tim")
-.then(messageHandler)
-.catch(err => {
-  console.error(error);
-  return lukeOrKevin("Kevin");
-})
-.then(messageHandler);
+const lukeOrKevin = (name) =>
+  new Promise((resolve, reject) => {
+    if (name === 'Luke') {
+      resolve('LuKe WaS fOuNd');
+    }
+    if (name === 'Kevin') {
+      resolve("It's me");
+    }
+    reject(`Could not find Luke or kevin instead found ${name}`);
+  });
+const messageHandler = (message) => console.log(message);
+lukeOrKevin('Tim')
+  .then(messageHandler)
+  .catch((err) => {
+    console.error(error);
+    return lukeOrKevin('Kevin');
+  })
+  .then(messageHandler);
 ```
+
 DEMO this
 
 ---
 
 ## Async - promise - any & all
 
-``` js
+```js
 const promises = [promise1, promise2, promise3];
 const allPromise = Promise.all(promises);
 
 allPromise.then(([promise1Res, promise2Res, promise3Res]) => {
-  console.log("We got all our results great");
+  console.log('We got all our results great');
 });
 ```
+
 - all or nothing
+
 ---
 
 ## Async - promise - any & all
 
-``` js
+```js
 const promises = [slowPromise1, quickPromise, failedPromise];
-Promise.any(quickPromiseResult => console.log("Fastest gun in the west"));
+Promise.any((quickPromiseResult) => console.log('Fastest gun in the west'));
 ```
+
 - first to the finish line
 
 ---
@@ -792,11 +791,12 @@ Promise.any(quickPromiseResult => console.log("Fastest gun in the west"));
 
 ## Async - async/await
 
-``` js
-const pinkyPromise = new Promise.resolve("Strong pinky");
+```js
+const pinkyPromise = new Promise.resolve('Strong pinky');
 
 const message = await pinkyPromise;
 ```
+
 - "infects" codebase
 - Wrapped by function
 
@@ -804,21 +804,22 @@ const message = await pinkyPromise;
 
 ## Async - async/await
 
-``` js
-const pinkyPromise = new Promise.resolve("Strong pinky");
+```js
+const pinkyPromise = new Promise.resolve('Strong pinky');
 
 const justDo = async () => {
   const message = await pinkyPromise;
-}
+};
 
 justDo();
 ```
+
 ---
 
 ## Async - async/await
 
-``` js
-const pinkyPromise = new Promise.resolve("Strong pinky");
+```js
+const pinkyPromise = new Promise.resolve('Strong pinky');
 
 async function justDo() {
   const message = await pinkyPromise;
@@ -826,6 +827,172 @@ async function justDo() {
 
 justDo();
 ```
+
+---
+
+# The Ellusive "Event Model"
+
+---
+
+## The Story of a Single Thread That Could!
+
+- Your code is run in a _single thread_
+- However, a given JavaScript (example v8) runtime support an _asynchronous_ model
+
+### Key Concepts
+
+- The Stack
+- The Event Queue
+- Pizza _(assumed knowledge)_
+
+---
+
+## The Stack
+
+- Think: Stack of cards
+- First in last out datastructure for functions
+
+---
+
+## The Event Queue
+
+- A queue of messages
+- Map to callback functions that need to be pushed back onto the stack
+
+---
+
+## Our very own pizza ordering runtime
+
+`$ pizzaRuntime ./sick-example.js`
+
+```js
+doTheThing();
+
+function doTheThing() {
+  doTheOtherThingFirst();
+}
+
+function doTheOtherThingFirst() {
+  /// ...
+}
+```
+
+```js
+const theStack = [];
+
+theStack.push({ fn: doTheThing, args: null });
+theStack.push({ fn: doTheOtherThingFirst, args: null });
+```
+
+---
+
+## Process Frames
+
+```js
+const frame = theStack.pop();
+
+while (frame) {
+  frame.fn(frame.args);
+
+  frame = theStack.pop();
+}
+
+// The stack is empty...
+```
+
+---
+
+## But what about async stuff?
+
+```js
+orderFood();
+
+function orderFood() {
+  orderPizza(pizzaIsHereCallback); // native API call
+}
+
+function pizzaIsHereCallback() {
+  console.log('The pizzas are here!');
+}
+```
+
+---
+
+## Adding features to our runtime
+
+```js
+const theStack = [];
+const theEventQueue = [];
+const runtimeState = {
+  isBusyOrderingPizza: false,
+};
+
+// A method our runtime natively supports (because we like pizza)
+function nativeOrderPizza(cb) {
+  runtimeState.isBusyOrderingPizza = true;
+
+  theEventQueue.push({
+    fn: cb,
+    done: () => !runtimeState.isBusyOrderingPizza,
+  });
+
+  // ... 3 seconds later ...
+
+  runtimeState.isBusyOrderingPizza = false;
+}
+```
+
+---
+
+## Interpreting the program
+
+```js
+orderFood();
+
+function orderFood() {
+  orderPizza(pizzaIsHereCallback); // native API call
+}
+
+function pizzaIsHereCallback() {
+  console.log('The pizzas are here!');
+}
+```
+
+```js
+theStack.push({ fn: orderFood, args: null });
+theStack.push({ fn: orderPizza, args:  });
+```
+
+---
+
+## Processing Frames and Event Queue
+
+```js
+while (true) {
+  processStack();
+
+  let message = theEventQueue.splice(0, 1); // The first message in the queue
+
+  if (message.done()) {
+    theStack.push({ fn: message.fn });
+  }
+}
+
+function processStack() {
+  let frame = theStack.pop();
+
+  while (frame) {
+    if (frame.isNativeCall) {
+      nativeOrderPizza(frame.arg);
+    } else {
+      frame.fn(frame.args);
+    }
+
+    frame = theStack.pop();
+  }
+}
+```
+
 ---
 
 ## References
@@ -837,4 +1004,5 @@ justDo();
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 - https://nodejs.org/api/fs.html#fs_dir_read_callback
 - https://blog.jcoglan.com/2011/03/11/promises-are-the-monad-of-asynchronous-programming/
-
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+- The Event Model: https://www.youtube.com/watch?v=XzXIMZMN9k4
