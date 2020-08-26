@@ -96,7 +96,7 @@ function sayHello() {
 
 ```javascript
 function fnName(arg1, arg2) {
-  console.log('hello world', arg1);
+  console.log("hello world", arg1);
 }
 ```
 
@@ -104,7 +104,7 @@ function fnName(arg1, arg2) {
 
 ```javascript
 const fnName = (arg1, arg2) => {
-  console.log('hello world', arg1);
+  console.log("hello world", arg1);
 };
 ```
 
@@ -175,11 +175,11 @@ const fnName = (arg1, arg2) => {
 ### `if`
 
 ```javascript
-const number = '5';
+const number = "5";
 if (number === 5) {
-  console.log('Number is 5');
+  console.log("Number is 5");
 } else {
-  console.log('Number is not 5');
+  console.log("Number is not 5");
 }
 ```
 
@@ -209,7 +209,7 @@ if (number === 5) {
 let count = 0;
 while (true) {
   count++;
-  console.log('This is how much we have looped: ', count);
+  console.log("This is how much we have looped: ", count);
 }
 ```
 
@@ -233,7 +233,7 @@ for (let count = 0; count <= 5; count++;) {
 
 ```javascript
 do {
-  console.log('We only show this once');
+  console.log("We only show this once");
 } while (false);
 ```
 
@@ -246,7 +246,7 @@ do {
 - Assume:
 
 ```javascript
-const people = ['Kevin', 'Luke', 'Tim'];
+const people = ["Kevin", "Luke", "Tim"];
 ```
 
 ---
@@ -267,14 +267,14 @@ people.forEach((person) => console.log(`Hello ${person}`));
 
 ```javascript
 const newPeople = list.map((person) => {
-  const newPerson = 'Hello ' + person;
+  const newPerson = "Hello " + person;
   return newPerson;
 });
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
 ```javascript
-const newPeople = people.map((person) => 'Hello ' + person);
+const newPeople = people.map((person) => "Hello " + person);
 // newPeople = ["Hello Kevin", "Hello Luke", "Hello Tim"];
 ```
 
@@ -285,7 +285,9 @@ const newPeople = people.map((person) => 'Hello ' + person);
 ### `filter`
 
 ```javascript
-const peopleWithK = people.filter((person) => person.toUpperCase().includes('K'));
+const peopleWithK = people.filter((person) =>
+  person.toUpperCase().includes("K")
+);
 // peopleWithK = ["Kevin", "Luke"];
 ```
 
@@ -298,7 +300,9 @@ const peopleWithK = people.filter((person) => person.toUpperCase().includes('K')
 Lazily evaluates if any item in the collection matches the predicate
 
 ```javascript
-const doesContainSomeoneWithK = people.some((person) => person.toUpperCase().includes('K'));
+const doesContainSomeoneWithK = people.some((person) =>
+  person.toUpperCase().includes("K")
+);
 // peopleWithK = true
 ```
 
@@ -309,9 +313,9 @@ const doesContainSomeoneWithK = people.some((person) => person.toUpperCase().inc
 ### `find`
 
 ```javascript
-const tim = people.find((person) => person === 'Tim');
+const tim = people.find((person) => person === "Tim");
 // tim = "Tim";
-const nick = people.find((person) => person === 'Nick');
+const nick = people.find((person) => person === "Nick");
 // nick = undefined
 ```
 
@@ -324,7 +328,10 @@ const nick = people.find((person) => person === 'Nick');
 Usually used to aggregate items in a collection.
 
 ```javascript
-const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`, '');
+const mashed = people.reduce(
+  (accumulator, person) => `${accumulator} ${person}`,
+  ""
+);
 // mashed = "Kevin Luke Tim";
 ```
 
@@ -350,8 +357,8 @@ const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`
 const person = {
   age: 10,
 };
-person['first'] = 'Donald';
-person.surname = 'Trump';
+person["first"] = "Donald";
+person.surname = "Trump";
 delete person.age;
 
 // Result: { first: 'Donald', surname: 'Trump' }
@@ -425,8 +432,8 @@ function getProperty(propertyName) {
   };
 }
 
-const getName = getProperty('name');
-const name = getName({ name: 'Tony' });
+const getName = getProperty("name");
+const name = getName({ name: "Tony" });
 // name === 'Tony'
 ```
 
@@ -481,8 +488,8 @@ American.prototype.setSurname = function (surname) {
   this.surname = surname;
 };
 
-const donald = new American('Donald');
-donald.setSurname('Trump');
+const donald = new American("Donald");
+donald.setSurname("Trump");
 
 // Result:
 // {
@@ -511,10 +518,10 @@ function SouthAfrican(name, loadsheddingLevel) {
 // We need this to link the prototype chain
 SouthAfrican.prototype = Object.create(American);
 
-const saffa = new SouthAfrican('Luke', 3);
+const saffa = new SouthAfrican("Luke", 3);
 
 // This method is defined on the American object!
-saffa.setSurname('Warren');
+saffa.setSurname("Warren");
 
 // `saffa.annoying` would be true!
 // `saffa.loadsheddingLevel` would be 3!
@@ -604,15 +611,19 @@ saffa.setSurname('Warren');
 ### Node - creating modules - require
 
 - greeter.js
-``` js
-const greet = name => console.log(`Hello ${name}`);
+
+```js
+const greet = (name) => console.log(`Hello ${name}`);
 module.exports = { greet };
 ```
+
 - index.js
-``` js
+
+```js
 const { greet } = require("./greeter");
 greet("Kevin");
 ```
+
 - Demo
 
 ---
@@ -622,15 +633,19 @@ greet("Kevin");
 ### Node - creating modules - import
 
 - greeter.js
-``` js
-export const greet = name => console.log(`Hello ${name}`);
+
+```js
+export const greet = (name) => console.log(`Hello ${name}`);
 export default greet;
 ```
+
 - index.js
-``` js
+
+```js
 import { greet } from "./greeter";
 greet("Kevin");
 ```
+
 - Demo
 
 ---
@@ -654,24 +669,25 @@ greet("Kevin");
 
 ## Async - setTimeout
 
-``` js
+```js
 const doSomething = () => console.log("Something has been done");
 setTimeout(doSomething, 3000);
 ```
+
 - `doSomething` is our callback fn
 
 ---
 
 ## Async - error first callbacks
 
-``` js
+```js
 const callback = (err, value) => {
   if (err) {
     handleErr(err);
   }
 
   handleValue(value);
-}
+};
 
 somethingAsync(data, data1, callback);
 ```
@@ -680,14 +696,14 @@ somethingAsync(data, data1, callback);
 
 ## Async - currying
 
-``` js
-const callbackForCustomer = customerId => (err, customerData) => {
+```js
+const callbackForCustomer = (customerId) => (err, customerData) => {
   if (err) {
     console.error("We failed getting customer or something", err);
   }
 
   doSomethingWithCustomer(customer, customerId);
-}
+};
 
 const callback = callBackForCustomer(1);
 getCustomerData(1, callback);
@@ -709,6 +725,109 @@ getCustomerData(1, callback);
 
 ---
 
+## Async - promises
+
+- `doSomethingAsync.then(asyncResult => console.log("asyncResult"));`
+- returning from `then` fn will be wrapped in promise
+- pipeline
+
+---
+
+## Async - creating promises
+
+```js
+const lukeOrKevin = (name) => new Promise((resolve, reject) => {
+  if (name === "Luke") {
+    resolve("LuKe WaS fOuNd");
+  }
+  if (name === "Kevin") {
+    resolve("It's me");
+  }
+  reject(`Could not find Luke or kevin instead found ${name}`);
+});
+const messageHandler = message => console.log(message);
+lukeOrKevin("Tim")
+.then(messageHandler)
+.catch(err => {
+  console.error(error);
+  return lukeOrKevin("Kevin");
+})
+.then(messageHandler);
+```
+DEMO this
+
+---
+
+## Async - promise - any & all
+
+``` js
+const promises = [promise1, promise2, promise3];
+const allPromise = Promise.all(promises);
+
+allPromise.then(([promise1Res, promise2Res, promise3Res]) => {
+  console.log("We got all our results great");
+});
+```
+- all or nothing
+---
+
+## Async - promise - any & all
+
+``` js
+const promises = [slowPromise1, quickPromise, failedPromise];
+Promise.any(quickPromiseResult => console.log("Fastest gun in the west"));
+```
+- first to the finish line
+
+---
+
+## Async - async/await
+
+- Similar to C#
+- Preferred
+- interchangeable with promises (don't though)
+- Synchronous
+
+---
+
+## Async - async/await
+
+``` js
+const pinkyPromise = new Promise.resolve("Strong pinky");
+
+const message = await pinkyPromise;
+```
+- "infects" codebase
+- Wrapped by function
+
+---
+
+## Async - async/await
+
+``` js
+const pinkyPromise = new Promise.resolve("Strong pinky");
+
+const justDo = async () => {
+  const message = await pinkyPromise;
+}
+
+justDo();
+```
+---
+
+## Async - async/await
+
+``` js
+const pinkyPromise = new Promise.resolve("Strong pinky");
+
+async function justDo() {
+  const message = await pinkyPromise;
+}
+
+justDo();
+```
+---
+
 ## References
 
 - https://en.wikipedia.org/wiki/JavaScript
@@ -717,5 +836,5 @@ getCustomerData(1, callback);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 - https://nodejs.org/api/fs.html#fs_dir_read_callback
+- https://blog.jcoglan.com/2011/03/11/promises-are-the-monad-of-asynchronous-programming/
 
----
