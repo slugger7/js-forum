@@ -190,6 +190,7 @@ if (number === 5) {
 - `===` `!==` - always
 - `==` `!=` - avoid (unless you know what you are doing)
 - Double equals uses type coercion to try and convert the type on the right to match the type on the left
+- Demo logic and funnies
 
 ---
 
@@ -207,11 +208,14 @@ if (number === 5) {
 
 ```javascript
 let count = 0;
-while (true) {
+const max = 50;
+while (count != 50) {
   count++;
   console.log('This is how much we have looped: ', count);
 }
 ```
+
+- what if count starts at 51?
 
 ---
 
@@ -446,14 +450,14 @@ The weird and wacky way that JavaScript implements something resembling inherita
 - Defines a way of creating the object
 - Provides some pridictability while sacrificing dynamic objects
 
-```
-function Person(name){
-    this.name = name;
+```js
+function Person(name) {
+  this.name = name;
 }
 
 const person = new Person('Peter');
 
-person.surname = "Griffon"; // This does nothing, you must go via the prototype!
+person.surname = 'Griffon'; // This does nothing, you must go via the prototype!
 ```
 
 ---
@@ -501,7 +505,7 @@ donald.setSurname('Trump');
 
 ### Inheritance
 
-You can inherit the features and prototype chain from another funtion constructor
+You can inherit the features and prototype chain from another function constructor
 
 ```js
 function SouthAfrican(name, loadsheddingLevel) {
@@ -529,7 +533,7 @@ saffa.setSurname('Warren');
 - Own properties vs Prototype properties
 - We keep looking up the chain until we find a property that matches
 
-`SouthAfican (owned) --> South African (prototype) --> American --> Object --> null`
+`SouthAfrican (owned) --> South African (prototype) --> American --> Object --> null`
 
 ---
 
@@ -548,7 +552,7 @@ saffa.setSurname('Warren');
 ### External code
 
 - Node
-- CDN "imports"
+- CDN "imports" - `<script ...>` before yours (jquery)
 - Security risks
 
 ---
@@ -827,6 +831,23 @@ async function justDo() {
 
 justDo();
 ```
+
+- anything returned needs to be awaited
+- demo
+
+---
+
+## Async - async/await
+
+- any & all could use `Promise.all`
+
+```js
+const asyncFns = [asyncFn1, asyncFn2, asyncFn3];
+const awaiters = asyncFns.map((fn) => fn());
+const [res1, res2, res3] = awaiters.map(async (awaiter) => await awaiter);
+```
+
+- ideas on any?
 
 ---
 
