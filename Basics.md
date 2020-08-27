@@ -537,6 +537,96 @@ saffa.setSurname('Warren');
 
 ---
 
+## What is `this`, a keyword for ants!?
+
+---
+
+## Some simple rules for understanding `this`
+
+- `this` in the global scope refers to the window object
+- `this` in an object refers to that object
+- You can set `this` to be what you want using `.call` and `.apply`
+- `this` when used in an arrow function 'captures' the this at the time od definition
+
+---
+
+## `this` in the global scope
+
+```js
+function whatIsThis() {
+  this.aDeadOneOfThese = 'upsidedown spider'; // this === window object
+}
+```
+
+---
+
+## `this` in an object
+
+```js
+function WhatIsThis() {
+  this.aDeadOneOfThese = 'upsidedown spider';
+
+  this.change = function () {
+    // This refers to the object instance so we can change the value on that object instance
+    this.aDeadOneOfThese = 'changed';
+  };
+}
+
+var obj = new WhatIsThis();
+obj.change();
+obj.aDeadOneOfThese; // Is now 'changed'
+```
+
+---
+
+## `this` using `call`
+
+```js
+function whatIsThis() {
+  this.aDeadOneOfThese = 'upsidedown spider'; // this === window object
+}
+const obj = {};
+whatIsThis.call(obj);
+
+console.log(obj); // obj.aDeadOneOfThese === 'upsidedown spider'
+```
+
+---
+
+## Using `this` with arrow functions
+
+> An arrow function does not have its own `this`. The `this` value of the enclosing lexical scope is used; arrow functions follow the normal variable lookup rules. So while searching for this which is not present in the current scope, an arrow function ends up finding the `this` from its enclosing scope.
+
+**Mozilla Docs**
+
+---
+
+## Sorry... What?
+
+> An arrow function **does not have its own `this`**. The `this` value of the **enclosing lexical scope** is used; **arrow functions follow the normal variable lookup rules**. So while searching for this which is **not present in the current scope**, an arrow function ends up **finding the `this` from its enclosing scope.**
+
+**Mozilla Docs**
+
+---
+
+## An Example
+
+```js
+var programmer = {
+  // Does not create a new scope!
+  i: 10,
+  arrow: () => console.log(this.i, this),
+  normieFunction: function () {
+    console.log(this.i, this);
+  },
+};
+
+obj.arrow(); // prints undefined, Window {...} (or the global object)
+obj.normieFunction(); // prints 10, Object {...}
+```
+
+---
+
 ## New hotness
 
 - Spread `...`
@@ -544,6 +634,10 @@ saffa.setSurname('Warren');
   - nested
   - rename
 - Generator function?
+
+---
+
+## Live Demo
 
 ---
 
@@ -1027,3 +1121,4 @@ function processStack() {
 - https://blog.jcoglan.com/2011/03/11/promises-are-the-monad-of-asynchronous-programming/
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 - The Event Model: https://www.youtube.com/watch?v=XzXIMZMN9k4
+- https://www.tutorialsteacher.com/javascript/this-keyword-in-javascript
