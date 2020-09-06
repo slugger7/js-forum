@@ -137,6 +137,10 @@ const fnName = (arg1, arg2) => {
 
 ---
 
+# Demo 1
+
+---
+
 ## Variables
 
 ### `var`
@@ -145,6 +149,8 @@ const fnName = (arg1, arg2) => {
 - Scopes to nearest function
 - If no function to scope to, be scoped to window function ie global (!!!)
 - Mutable
+
+(Will get into scoping later)
 
 ---
 
@@ -190,7 +196,10 @@ if (number === 5) {
 - `===` `!==` - always
 - `==` `!=` - avoid (unless you know what you are doing)
 - Double equals uses type coercion to try and convert the type on the right to match the type on the left
-- Demo logic and funnies
+
+---
+
+# Demo 2
 
 ---
 
