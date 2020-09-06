@@ -64,7 +64,7 @@ alert("hello world");
 
 ## Hello world seems boring alerts suck
 
-```
+``` html
 <button onclick="alert('hello world');">Say hello damnit</button>
 ```
 
@@ -76,7 +76,7 @@ alert("hello world");
 
 - index.js
 
-```
+``` js
 function sayHello() {
     alert("hello world");
 }
@@ -84,7 +84,7 @@ function sayHello() {
 
 - index.html
 
-```
+``` html
 <button onclick="sayHello()">Say hello</button>
 ```
 
