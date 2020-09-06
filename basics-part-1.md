@@ -414,6 +414,58 @@ const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`
 
 ---
 
+## New hotness
+
+- Spread `...` or group actually (example incoming)
+- Cloning objects using `JSON.stringify`
+
+---
+
+## New hotness
+
+### Template strings
+``` js
+const greetedPeople = people.map(person => `Hello ${person}`);
+```
+
+---
+
+## New hotness
+
+### Destructuring - object
+
+``` js
+const person = {
+  name: "Kevin",
+  age: 21
+};
+const { name } = person;
+const { name: kevinsName, age } = person;
+
+const newPerson = {
+  ...person,
+  status: "new"
+}
+```
+
+---
+
+## New hotness
+
+### Destructuring - array
+
+``` js
+const people = [/*...*/];
+const [firstPerson, secondPerson, ...rest] = people;
+// firstPerson = Kevin, secondPerson = Luke, rest = ["Tim"]
+```
+
+---
+
+# Demo 4
+
+---
+
 ## Dynamic Objects
 
 - Anything goes in JS
@@ -693,18 +745,6 @@ var programmer = {
 obj.arrow(); // prints undefined, Window {...} (or the global object)
 obj.normieFunction(); // prints 10, Object {...}
 ```
-
----
-
-## New hotness
-
-- Spread `...`
-- String templates
-- Destructure
-  - nested
-  - rename
-
----
 
 ## Live Demo
 
