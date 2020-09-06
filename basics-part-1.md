@@ -176,6 +176,63 @@ const fnName = (arg1, arg2) => {
 
 ---
 
+## Variables
+
+### Number
+``` js
+let count = 0;
+const earthGravity = 9.80665;
+```
+
+---
+
+## Variables
+
+### Character
+
+``` js
+let a = "a";
+let b = 'b';
+```
+
+---
+
+## Variables
+
+### String
+
+``` js
+const kevin = "Kevin";
+const luke = 'Luke';
+```
+
+---
+
+## Variables
+
+### Array
+``` js
+const people = ["Kevin", "Luke", "Tim"];
+```
+
+---
+
+## Variables
+
+### Object
+
+``` js
+const person = {
+  name: "Kevin",
+  someCharacter: "C",
+  age: 21,
+  temperature: 36.4,
+  booksRead: [{...}] // elipse
+}
+```
+
+---
+
 ## Logic
 
 ### `if`
@@ -351,6 +408,9 @@ const mashed = people.reduce((accumulator, person) => `${accumulator} ${person}`
 - `includes`
 - `join`
 - `...` < not a spread operator
+---
+
+# Demo 3
 
 ---
 
