@@ -225,7 +225,7 @@ const people = ["Kevin", "Luke", "Tim"];
 const person = {
   name: "Kevin",
   someCharacter: "C",
-  age: 21,
+  age: 55,
   temperature: 36.4,
   booksRead: [{...}] // elipse
 }
@@ -253,6 +253,11 @@ if (number === 5) {
 - `===` `!==` - always
 - `==` `!=` - avoid (unless you know what you are doing)
 - Double equals uses type coercion to try and convert the type on the right to match the type on the left
+
+---
+## Logic
+
+![this funny](./assets/js-logic.png)
 
 ---
 
@@ -437,7 +442,7 @@ const greetedPeople = people.map(person => `Hello ${person}`);
 ``` js
 const person = {
   name: "Kevin",
-  age: 21
+  age: 55
 };
 const { name } = person;
 const { name: kevinsName, age } = person;
