@@ -219,16 +219,20 @@ const people = ["Kevin", "Luke", "Tim"];
 
 ## Variables
 
-### Object
+## Objects
 
-``` js
+- Anything goes in JS
+- You can add or remove items from an object at anytime
+
+```javascript
 const person = {
-  name: "Kevin",
-  someCharacter: "C",
-  age: 55,
-  temperature: 36.4,
-  booksRead: [{...}] // elipse
-}
+  age: 10,
+};
+person['first'] = 'Donald';
+person.surname = 'Trump';
+delete person.age;
+
+// Result: { first: 'Donald', surname: 'Trump' }
 ```
 
 ---
@@ -253,13 +257,6 @@ if (number === 5) {
 - `===` `!==` - always
 - `==` `!=` - avoid (unless you know what you are doing)
 - Double equals uses type coercion to try and convert the type on the right to match the type on the left
-
----
-## Logic
-
-![this funny](./assets/js-logic.png)
-
----
 
 # Demo 2
 
@@ -468,26 +465,6 @@ const [firstPerson, secondPerson, ...rest] = people;
 ---
 
 # Demo 4
-
----
-
-## Dynamic Objects
-
-- Anything goes in JS
-- You can add or remove items from an object at anytime
-
-```javascript
-const person = {
-  age: 10,
-};
-person['first'] = 'Donald';
-person.surname = 'Trump';
-delete person.age;
-
-// Result: { first: 'Donald', surname: 'Trump' }
-```
-
----
 
 ## Functional concepts
 
