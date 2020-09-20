@@ -59,7 +59,6 @@ _class: invert
 - `import R from "ramda";`
 - `import React, { useState, useEffect } from "react";`
 - `import * as Foo from "no-default-export";`
-- Demo
 
 ---
 
@@ -80,15 +79,16 @@ module.exports = { greet };
 const { greet } = require('./greeter');
 greet('Kevin');
 ```
-
-- Demo
-
 ---
 
 ## Modules & imports
 
 ### Node - creating modules - import
 
+- package.json
+``` json
+{ "type": "module" }
+```
 - greeter.js
 
 ```js
