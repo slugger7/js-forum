@@ -43,9 +43,9 @@ _class: invert
 ### Node - NPM
 
 - Node Package Manager / whatever acronym is on their site
-- `npm i ramda`
+- `npm i ramda` or `npm install ramda`
 - `npm i --save-dev jest`
-- `npm un jest`
+- `npm un jest` or `npm uninstall jest`
 
 ---
 
@@ -59,7 +59,6 @@ _class: invert
 - `import R from "ramda";`
 - `import React, { useState, useEffect } from "react";`
 - `import * as Foo from "no-default-export";`
-- Demo
 
 ---
 
@@ -80,15 +79,16 @@ module.exports = { greet };
 const { greet } = require('./greeter');
 greet('Kevin');
 ```
-
-- Demo
-
 ---
 
 ## Modules & imports
 
 ### Node - creating modules - import
 
+- package.json
+``` json
+{ "type": "module" }
+```
 - greeter.js
 
 ```js
@@ -237,7 +237,7 @@ allPromise.then(([promise1Res, promise2Res, promise3Res]) => {
 
 ```js
 const promises = [slowPromise1, quickPromise, failedPromise];
-Promise.any((quickPromiseResult) => console.log('Fastest gun in the west'));
+Promise.any(promises).then((quickPromiseResult) => console.log('Fastest gun in the west'));
 ```
 
 - first to the finish line
@@ -256,7 +256,7 @@ Promise.any((quickPromiseResult) => console.log('Fastest gun in the west'));
 ## Async - async/await
 
 ```js
-const pinkyPromise = new Promise.resolve('Strong pinky');
+const pinkyPromise = Promise.resolve('Strong pinky');
 
 const message = await pinkyPromise;
 ```
@@ -269,7 +269,7 @@ const message = await pinkyPromise;
 ## Async - async/await
 
 ```js
-const pinkyPromise = new Promise.resolve('Strong pinky');
+const pinkyPromise = Promise.resolve('Strong pinky');
 
 const justDo = async () => {
   const message = await pinkyPromise;
