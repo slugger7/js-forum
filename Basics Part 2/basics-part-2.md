@@ -256,7 +256,7 @@ Promise.any((quickPromiseResult) => console.log('Fastest gun in the west'));
 ## Async - async/await
 
 ```js
-const pinkyPromise = new Promise.resolve('Strong pinky');
+const pinkyPromise = Promise.resolve('Strong pinky');
 
 const message = await pinkyPromise;
 ```
@@ -269,7 +269,7 @@ const message = await pinkyPromise;
 ## Async - async/await
 
 ```js
-const pinkyPromise = new Promise.resolve('Strong pinky');
+const pinkyPromise = Promise.resolve('Strong pinky');
 
 const justDo = async () => {
   const message = await pinkyPromise;
