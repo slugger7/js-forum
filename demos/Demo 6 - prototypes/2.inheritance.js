@@ -15,8 +15,12 @@ function SouthAfrican(name, loadsheddingLevel) {
 // We need this to link the prototype chain
 SouthAfrican.prototype = Object.create(American.prototype);
 
-const saffa = new SouthAfrican('Luke', 3);
+SouthAfrican.prototype.shoutShout = function () {
+  console.log('Let it all out');
+};
 
+const saffa = new SouthAfrican('Luke', 2);
+saffa.shoutShout();
 // This method is defined on American
 // but we can use it on the SouthAfrican instance!
 saffa.setSurname('Warren');

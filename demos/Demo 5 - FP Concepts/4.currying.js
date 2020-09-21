@@ -12,11 +12,11 @@ const dogs = [
 const cats = [
   {
     age: 11,
-    name: 'Cathy',
+    firstName: 'Cathy',
   },
   {
     age: 6,
-    name: 'Bob',
+    firstName: 'Bob',
   },
 ];
 
@@ -30,3 +30,5 @@ const youngDogs = filterByAgeLessThan10(dogs);
 const youngCats = filterByAgeLessThan10(cats);
 
 console.log({ youngDogs, youngCats });
+
+// insert Ramda plug here
