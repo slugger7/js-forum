@@ -14,7 +14,7 @@ function getProperty(propertyName) {
 // the returned function has an arity 1
 
 const getName = getProperty('name');
-console.log({ getName });
+console.log({ getName, numOfArgs: getName.length });
 
 const name = getName({ name: 'Tony' });
 
