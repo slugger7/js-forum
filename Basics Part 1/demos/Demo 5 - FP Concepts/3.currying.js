@@ -16,6 +16,6 @@ function getProperty(propertyName) {
 const getName = getProperty('name');
 console.log({ getName, numOfArgs: getName.length });
 
-const name = getName({ name: 'Tony' });
+const name = getProperty({ name: 'Tony' });
 
-console.log({ name });
+console.log(name);
