@@ -1,7 +1,7 @@
 async function justDoIt() {
     const asyncFns = [
         () => new Promise(resolve => setTimeout(resolve, 3000, "Kevin")),
-        () => new Promise(resolve => setTimeout(resolve, 3000, "Luke")),
+        () => new Promise(resolve => setTimeout(resolve, 1000, "Luke")),
         () => new Promise(resolve => setTimeout(resolve, 3000, "Tim")),
     ];
 
@@ -13,9 +13,9 @@ async function justDoIt() {
 
     const people = [];
 
-    for (const awaiter of awaiters) {
+    for await (const person of awaiters) {
         console.log("Waiting for somethnig");
-        people.push(await awaiter);
+        people.push(person);
     }
 
     console.log("Done waiting we have our people");
