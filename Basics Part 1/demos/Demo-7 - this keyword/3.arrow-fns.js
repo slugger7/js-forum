@@ -10,7 +10,7 @@ const programmer = {
 function Kevin() {
   var that = this;
 
-  this.shaveHead = (that) => {
+  this.mosh = (that) => {
     console.log('SUCCESS', that);
   };
 }

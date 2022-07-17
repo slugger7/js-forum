@@ -17,21 +17,44 @@ const donald = new American('Donald');
 donald.setSurname('Trump');
 donald.shout();
 
-console.log(donald);
+console.log({donald});
+console.log({American});
 
-class ClassyAmerican {
+const johnny = new American("Johnny");
+
+donald.buildWall = function() {
+  console.log(`${this.name} is building it`);
+};
+
+donald.buildWall();
+try {
+  johnny.buildWall();
+} catch (err) {
+  console.log("Johnny was unable to build a wall")
+}
+
+console.log({johnny});
+
+American.prototype.makeBourbon = function() {
+  console.log(this.name + ': 51% Corn, aged for 4 years in virgin oak');
+}
+
+johnny.makeBourbon();
+donald.makeBourbon();
+
+class Brit {
   constructor(name){
     this.annoying = false;
     this.name = name;
   }
 
-  shout = function(){
-    console.log("Loud noises! Love " + this.name);
+  shout = function() {
+    console.log("Oh yeah baby! love " + this.name);
   }
 
   // Instance method
   shout = () => {
-    console.log("Loud noises! Love " + this.name);
+    console.log("Oh yeah baby! Love " + this.name);
   }
 
   // Prototype method
@@ -40,7 +63,7 @@ class ClassyAmerican {
   }
 }
 
-var classyAmerican = new ClassyAmerican("Kevin")
-classyAmerican.setSurname('Heritage');
-
-console.log(classyAmerican);
+var austin = new Brit("Austin")
+austin.setSurname('Powers');
+austin.shout();
+console.log(austin);

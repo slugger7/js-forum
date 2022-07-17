@@ -3,7 +3,7 @@ function setADeadOneOfThese() {
 }
 
 setADeadOneOfThese();
-console.log('global:', global.aDeadOneOfThese);
+console.log('global/window:', window.aDeadOneOfThese);
 
 const spider = {};
 setADeadOneOfThese.call(spider);

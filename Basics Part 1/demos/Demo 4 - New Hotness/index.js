@@ -27,8 +27,8 @@ const objectDestructuring = () => {
 const arrayDestructuring = () => {
   console.log("arrayDestructure");
   const bananas = "Kevin)Luke)Tim";
-  const [kevin, luke, tim] = bananas.split(")");
-  console.log("Array of people: ", kevin, luke, tim);
+  const [, luke, tim] = bananas.split(")");
+  console.log("Array of people: ", luke, tim);
 };
 
 const destructureRenaming = () => {

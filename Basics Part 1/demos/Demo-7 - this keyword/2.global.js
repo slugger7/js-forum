@@ -8,7 +8,7 @@ function WhatIsThis() {
   };
 }
 
-var loveGuruRef = new WhatIsThis();
+const loveGuruRef = new WhatIsThis();
 loveGuruRef.change();
 
 console.log(loveGuruRef);
