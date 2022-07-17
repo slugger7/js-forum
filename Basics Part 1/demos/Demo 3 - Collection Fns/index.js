@@ -15,43 +15,50 @@ const people = [
 
 const theForeach = () => {
   console.log("Foreach");
-  people.forEach((person) => console.log("Hello ", person.name));
+  people.forEach(person => console.log("Hello ", person.name));
 };
 
 const theFind = () => {
   console.log("Find");
-  const kevin = people.find((person) => person.name === "Kevin");
+  const kevin = people.find(person => person.name === "Kevin");
   console.log("Kevin: ", kevin);
 };
 
 const theMap = () => {
   console.log("Map");
-  const justNames = people.map((person) => ({
+  const namesWithNamesAndAges = people.map(person => ({
     name: person.name,
     nameWithAge: [person.name, person.age].join(" "),
   }));
-  console.log("Just Names: ", justNames);
+  console.log("Just Names: ", namesWithNamesAndAges);
 };
 
 const theFilter = () => {
   console.log("Filter");
-  const peopleWithK = people.filter((person) =>
-    person.name.toUpperCase().includes("K")
+  const peopleWithK = people.filter(person =>
+    person.name
+      .toUpperCase()
+      .includes("K")
   );
   console.log("People With K: ", peopleWithK);
 };
 
 const theSome = () => {
   console.log("Some");
-  const doesContainSomeoneWithK = people.some((person) =>
-    person.name.toUpperCase().includes("K")
+  const doesContainSomeoneWithK = people.some(person =>
+    person.name
+      .toUpperCase()
+      .includes("K")
   );
   console.log("Does contain someone with K: ", doesContainSomeoneWithK);
 };
 
 const theReduce = () => {
   console.log("Reduce");
-  const totalAge = people.reduce((total, person) => total + person.age, 0);
+  const totalAge = people.reduce(
+    (total, person) => total + person.age,
+    0
+  );
   console.log("Total age: ", totalAge);
 };
 
