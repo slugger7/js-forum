@@ -1,5 +1,5 @@
 // This function returns a function
-function getProperty(propertyName) {
+function getProperty2(propertyName) {
   // This function to be exact
   return function getPropertyFromObject(obj) {
     return obj[propertyName];
@@ -7,7 +7,7 @@ function getProperty(propertyName) {
 }
 
 // Shorthand
-//const getProperty => propertyName => obj => obj[propertyName];
+const getProperty = propertyName => obj => obj[propertyName];
 
 // getProperty has an arity of 2
 // when we apply it with a single argument,

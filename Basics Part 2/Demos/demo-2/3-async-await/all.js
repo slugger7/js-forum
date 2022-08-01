@@ -18,6 +18,8 @@ async function justDoIt() {
         people.push(person);
     }
 
+    console.log(await Promise.all(awaiters));
+
     console.log("Done waiting we have our people");
 
     const [kevin, luke, tim] = people;

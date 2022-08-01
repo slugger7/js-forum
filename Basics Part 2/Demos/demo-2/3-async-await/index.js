@@ -1,11 +1,11 @@
 const pinkyPromise = new Promise(resolve => setTimeout(resolve, 3000, 'Strong pinky'));
 
 const justDo = async () => {
-    console.log("Before we discuss any pinkies");
+    console.log("Before await");
 
     const whatPinky = await pinkyPromise;
 
-    console.log("You has pinky? ", whatPinky);
+    console.log("After Promise", whatPinky);
 };
 
 console.log("Before we call our async fn");

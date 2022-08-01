@@ -1,18 +1,21 @@
 const lukeOrKevin = (name) => new Promise((resolve, reject) => {
-
     const results = {
-        LUKE: () => resolve('LuKe WaS fOuNd'),
-        KEVIN: () => resolve("It's me")
-    }
+        LUKE: 'LuKe WaS fOuNd',
+        KEVIN: "It's KEVIN"
+    };
 
-    setTimeout
-    let resolveFn = results[name.toUpperCase()];
+    setTimeout(() => {
 
-    if (!resolveFn) {
-        resolveFn = () => reject(`Could not find Luke or kevin instead found ${name}`);
-    }
+        const person = results[name.toUpperCase()];
 
-    setTimeout(resolveFn, 3000);
+        if(person){
+            resolve(person);
+        }
+        else{
+            reject(`${name} was not found`)
+        }
+
+    }, 3000);
 });
 
 const probe = (message) => (data) => {
@@ -26,10 +29,10 @@ lukeOrKevin("Tim")
     .then(probe("First then"))
     .catch((err) => {
         console.error(err);
-        return lukeOrKevin("Kevin")
+        return lukeOrKevin("Kevin") // Promises returned from within promises are unwrapped
     })
     .then(probe("Second Then"))
-    .then(() => lukeOrKevin("luke"))
+    .then(() => "luke") // Not returning a promise
     .then(probe("Third Then"));
 
 console.log("After calling our then chain");

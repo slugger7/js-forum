@@ -1,0 +1,15 @@
+{
+  "name": "demo-1",
+  "version": "1.0.0",
+  "description": "Npm modules and imports",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo 'Test command ran'",
+    "precustom-script": "echo 'pre custom script ran'",
+    "custom-script": "echo 'custom script ran'",
+    "postcustom-script": "echo 'post custom script ran'"
+  },
+  "author": "Kevin and Luke",
+  "license": "ISC"
+}
