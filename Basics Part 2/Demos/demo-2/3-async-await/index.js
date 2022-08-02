@@ -10,6 +10,8 @@ const justDo = async () => {
 
 console.log("Before we call our async fn");
 
-justDo();
+justDo().then(() => {
+    console.log('donezies')
+});
 
 console.log("After we called our async fn");
